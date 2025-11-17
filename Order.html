@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ixvi PCs - Order Form</title>
+<style>
+  body {
+    background-color: #000000;
+    color: #00BFFF;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    margin: 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .form-container {
+    display: none; /* hidden until a preset/custom is picked */
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+
+  label.checkbox-label {
+    display: flex;
+    justify-content: space-between; /* text left, checkbox right */
+    width: 100%;
+    font-size: 1.2rem;
+    color: #00BFFF;
+    align-items: center;
+  }
+
+  .part-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .part-container label {
+    align-self: flex-start;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #FF0000; /* red outline */
+    background-color: #000000; /* black inside */
+    color: #00BFFF; /* blue text */
+  }
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #00BFFF;
+    background-color: #000000;
+    border: 2px solid #FF0000;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .custom-fields {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  textarea {
+    resize: none; /* disables dragging */
+}
+
+  .send-button {
+    display: none; /* stays hidden until selection */
+    background-color: #FF0000;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;      /* make it block */
+    margin: 20px auto;   /* center horizontally */
+}
+
+  .send-button:hover {
+    background-color: #000000;
+    border: 2px solid #FF0000;
+    transform: scale(1.05);
+  }
+
+  .disclaimer {
+  color: #FF0000;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Ixvi PCs - Place Your Order</h1>
+
+<div class="checkbox-group" id="presetGroup">
+  <label class="checkbox-label">Basic <input type="checkbox" name="preset" value="Basic"></label>
+  <label class="checkbox-label">Pro <input type="checkbox" name="preset" value="Pro"></label>
+  <label class="checkbox-label">Ultra <input type="checkbox" name="preset" value="Ultra"></label>
+  <!--<label class="checkbox-label">Elite <input type="checkbox" name="preset" value="Elite"></label>-->
+  <label class="checkbox-label">Custom <input type="checkbox" name="preset" value="Custom"></label>
+</div>
+
+<div class="form-container" id="formContainer">
+  <form id="orderForm">
+    <div class="custom-fields" id="customFields">
+      <!-- Repeat this block for each part -->
+      <div class="part-container">
+        <label>Motherboard</label>
+        <input type="text" name="motherboard_name" placeholder="Motherboard Name">
+        <input type="text" name="motherboard_details" placeholder="Details">
+      </div>
+
+      <div class="part-container">
+        <label>CPU</label>
+        <input type="text" name="cpu_name" placeholder="CPU Name">
+        <input type="text" name="cpu_details" placeholder="Details">
+      </div>
+
+      <div class="part-container">
+        <label>RAM</label>
+        <input type="text" name="ram_name" placeholder="RAM Name">
+        <input type="text" name="ram_details" placeholder="Details">
+      </div>
+
+      <div class="part-container">
+        <label>Storage</label>
+        <input type="text" name="storage_name" placeholder="Storage Name">
+        <input type="text" name="storage_details" placeholder="Details">
+      </div>
+
+      <div class="part-container">
+        <label>PSU</label>
+        <input type="text" name="psu_name" placeholder="PSU Name">
+        <input type="text" name="psu_details" placeholder="Details">
+      </div>
+
+      <div class="part-container">
+        <label>Case</label>
+        <input type="text" name="case_name" placeholder="Case Name">
+        <input type="text" name="case_details" placeholder="Details">
+      </div>
+
+      <div class="part-container">
+        <label>Fans</label>
+        <input type="text" name="fans_name" placeholder="Fans Name">
+        <input type="text" name="fans_details" placeholder="Details">
+      </div>
+
+      <div class="part-container">
+        <label>CPU Cooler</label>
+        <input type="text" name="cooler_name" placeholder="Cooler Name">
+        <input type="text" name="cooler_details" placeholder="Details">
+      </div>
+
+      <div class="part-container">
+        <label>Additional Accessories</label>
+        <input type="text" name="accessories_name" placeholder="Accessory Name">
+        <input type="text" name="accessories_details" placeholder="Details">
+      </div>
+    </div>
+
+    <div class="part-container">
+      <label>Special Instructions</label>
+      <textarea name="instructions" rows="3" placeholder="Any notes or special requests"></textarea>
+    </div>
+
+    <div class="part-container">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Your email" required>
+    </div>
+
+    <button type="submit" class="send-button" id="sendButton">Send Order</button>
+  </form>
+</div>
+
+<button onclick="window.location.href='/'" class="send-button" id="backButton">← Back to Homepage</button>
+  <p class="disclaimer">*Parts/brands may vary based on availability.</p>
+  
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("YXXP3E0HTO4X2bbKs");
+
+  const presetCheckboxes = document.querySelectorAll('input[name="preset"]');
+  const formContainer = document.getElementById('formContainer');
+  const customFields = document.getElementById('customFields');
+  const orderForm = document.getElementById('orderForm');
+  const sendButton = document.getElementById('sendButton');
+
+  // Show form based on preset selection
+presetCheckboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      // Uncheck all other presets
+      presetCheckboxes.forEach(cb => {
+        if (cb !== checkbox) cb.checked = false;
+      });
+    }
+
+    // Show form if any preset is checked
+    const anyChecked = Array.from(presetCheckboxes).some(cb => cb.checked);
+    formContainer.style.display = anyChecked ? 'flex' : 'none';
+    sendButton.style.display = anyChecked ? 'block' : 'none';
+
+    // Show custom fields only if Custom is checked
+    const customCheckbox = document.querySelector('input[name="preset"][value="Custom"]');
+    customFields.style.display = customCheckbox.checked ? 'flex' : 'none';
+  });
+});
+
+// Form submission
+orderForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Disable the button immediately to prevent double clicks
+  sendButton.disabled = true;
+  sendButton.innerText = "Sending...";
+
+  const formData = new FormData(this);
+  let orderData = {};
+  formData.forEach((value, key) => { orderData[key] = value; });
+
+  // Capture preset selection explicitly
+  const presetCheckbox = document.querySelector('input[name="preset"]:checked');
+  orderData.preset = presetCheckbox ? presetCheckbox.value : "None";
+
+  // Fire emails in the background (async)
+  emailjs.send("service_kpvu9k4", "template_adminOrder", orderData)
+    .then(() => console.log('Admin email sent'))
+    .catch(err => console.error('Admin email failed', err));
+
+  const customerData = { ...orderData, to_email: orderData.email };
+  emailjs.send("service_kpvu9k4", "template_tgsa473", customerData)
+    .then(() => console.log('Customer email sent'))
+    .catch(err => console.error('Customer email failed', err));
+
+  // Instant redirect
+  window.location.href = 'thx.html';
+});
+</script>
+</body>
+</html>
