@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Ixvi PC Builder</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow: hidden; /* prevent scrolling */
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      background-color: #0096ff; /* warmer, vibrant true blue */
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 0 15px #0096ff;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      transform: scale(1.05);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(120deg, red, orange, yellow, green, cyan, blue, indigo, violet, red);
+      background-size: 800% 800%;
+      animation: gradientMove 15s linear infinite; /* fast, smooth infinite loop */
+     padding-top: calc(64px + env(safe-area-inset-top)) /* offset for navbar */
+      box-sizing: border-box;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 8vw, 3rem);
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
+      margin: 0;
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      100% {background-position: 400% 50%;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <img src="/favicon.ico" class="nav-logo" alt="Home" />
+    <a href="#" class="nav-link">Browse PCs</a>
+    <a href="#" class="nav-link">Order</a>
+    <a href="#" class="nav-link">About Us</a>
+    <a href="#" class="nav-link">More</a>
+  </div>
+
+  <div class="hero">
+    <h1>Ixvi PCs - Build Your Dream</h1>
+  </div>
+
+</body>
+</html>
