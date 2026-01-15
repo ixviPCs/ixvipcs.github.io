@@ -17,15 +17,17 @@
     }
 
     .navbar {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0; /* 2px top and bottom */
-      width: 100%;
-      background-color: #0096ff;
-      box-shadow: 0 0 10px #0096ff;
-      box-sizing: border-box;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    width: 100%;
+    background-color: #0096ff;
+    box-shadow: 0 0 15px #0096ff;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* sets navbar font to match main page */
+  }
 
     /* Logo */
     .nav-logo {
@@ -44,14 +46,15 @@
 
     /* Text links */
     .nav-link {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      padding: 4px 12px;
-      border-radius: 6px;
-      transition: transform 0.2s;
-      white-space: nowrap;
-    }
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: transform 0.2s;
+    white-space: nowrap;
+    font-family: inherit; /* inherit from navbar container */
+  }
 
     .nav-link:hover {
       transform: scale(1.05);
