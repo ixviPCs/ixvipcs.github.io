@@ -17,18 +17,18 @@
     }
 
     .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
-    width: 100%;
-    background-color: #0096ff;
-    box-shadow: 0 0 15px #0096ff;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif !important; /* sets navbar font to match main page */
-  }
-  
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      width: 100%;
+      background-color: #0096ff;
+      box-shadow: 0 0 15px #0096ff;
+      box-sizing: border-box;
+      font-family: inherit; /* inherit from container inline */
+    }
+
     .nav-logo {
       height: 40px;
       width: 40px;
@@ -36,15 +36,15 @@
     }
 
     .nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: transform 0.2s;
-    white-space: nowrap;
-    font-family: inherit !important; /* inherit from navbar container */
-  }
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: transform 0.2s;
+      white-space: nowrap;
+      font-family: inherit;
+    }
 
     .nav-link:hover {
       transform: scale(1.05);
@@ -59,6 +59,7 @@
   // inject navbar HTML wrapped in container
   const container = document.createElement('div');
   container.className = 'navbar-container';
+  container.style.fontFamily = 'Arial, sans-serif'; // inline font forces it
   container.innerHTML = `
     <div class="navbar">
       <img src="/favicon.ico" class="nav-logo" alt="Home" />
