@@ -20,7 +20,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 5px 0; /* 5px top and bottom */
+      padding: 10px 0; /* 2px top and bottom */
       width: 100%;
       background-color: #0096ff;
       box-shadow: 0 0 10px #0096ff;
