@@ -20,7 +20,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 6px 16px; /* skinny navbar */
+      padding: 2px 0; /* 2px top and bottom */
       width: 100%;
       background-color: #0096ff;
       box-shadow: 0 0 10px #0096ff;
@@ -29,8 +29,8 @@
 
     /* Logo */
     .nav-logo {
-      height: 30px; /* smaller logo */
-      width: 30px;
+      height: 40px; /* your desired logo size */
+      width: 40px;
       cursor: pointer;
       display: block;
     }
@@ -39,7 +39,7 @@
       display: flex;
       align-items: center;
       padding: 0;
-      margin: 0;
+      margin: 0 8px; /* optional horizontal spacing */
     }
 
     /* Text links */
@@ -47,7 +47,7 @@
       color: white;
       text-decoration: none;
       font-size: 1rem;
-      padding: 4px 12px; /* smaller padding */
+      padding: 4px 12px;
       border-radius: 6px;
       transition: transform 0.2s;
       white-space: nowrap;
