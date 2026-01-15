@@ -26,7 +26,7 @@
     background-color: #0096ff;
     box-shadow: 0 0 15px #0096ff;
     box-sizing: border-box;
-    font-family: Arial, sans-serif; /* sets navbar font to match main page */
+    font-family: Arial, sans-serif !important; /* sets navbar font to match main page */
   }
   
     .nav-logo {
@@ -43,7 +43,7 @@
     border-radius: 6px;
     transition: transform 0.2s;
     white-space: nowrap;
-    font-family: inherit; /* inherit from navbar container */
+    font-family: inherit !important; /* inherit from navbar container */
   }
 
     .nav-link:hover {
