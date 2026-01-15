@@ -62,7 +62,9 @@
   container.style.fontFamily = 'Arial, sans-serif'; // inline font forces it
   container.innerHTML = `
     <div class="navbar">
-      <img src="/favicon.ico" class="nav-logo" alt="Home" />
+      <a href="/" class="nav-link">
+  <img src="/favicon.ico" class="nav-logo" alt="Home" />
+</a>
       <a href="/Pre-Built-PCs" class="nav-link">Browse PCs</a>
       <a href="/Order" class="nav-link">Order</a>
       <a href="/About-Us" class="nav-link">About Us</a>
