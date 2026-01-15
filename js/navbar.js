@@ -1,11 +1,11 @@
 (function() {
-  // inject CSS
   const style = document.createElement('style');
   style.textContent = `
     html, body {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     .navbar-container {
@@ -18,21 +18,19 @@
 
     .navbar {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
-      padding: 12px 20px;
+      gap: 12px;
+      padding: 6px 16px; /* skinny navbar */
       width: 100%;
       background-color: #0096ff;
-      box-shadow: 0 0 15px #0096ff;
+      box-shadow: 0 0 10px #0096ff;
       box-sizing: border-box;
-      font-family: inherit;
     }
 
     /* Logo */
     .nav-logo {
-      height: 40px;
-      width: 40px;
+      height: 30px; /* smaller logo */
+      width: 30px;
       cursor: pointer;
       display: block;
     }
@@ -48,12 +46,11 @@
     .nav-link {
       color: white;
       text-decoration: none;
-      font-size: 1.1rem;
-      padding: 8px 16px;
+      font-size: 1rem;
+      padding: 4px 12px; /* smaller padding */
       border-radius: 6px;
       transition: transform 0.2s;
       white-space: nowrap;
-      font-family: inherit;
     }
 
     .nav-link:hover {
@@ -62,10 +59,9 @@
   `;
   document.head.appendChild(style);
 
-  // inject navbar HTML wrapped in container
+  // inject navbar
   const container = document.createElement('div');
   container.className = 'navbar-container';
-  container.style.fontFamily = 'Arial, sans-serif';
   container.innerHTML = `
     <div class="navbar">
       <a href="/" class="nav-logo-link">
@@ -79,15 +75,12 @@
   `;
   document.body.prepend(container);
 
-  // dynamically set body padding based on navbar height
+  // dynamically push page down based on navbar height
   function updateBodyPadding() {
     const navbar = container.querySelector('.navbar');
     document.body.style.paddingTop = navbar.offsetHeight + 'px';
   }
 
-  // initial padding
   updateBodyPadding();
-
-  // update padding if window resizes
   window.addEventListener('resize', updateBodyPadding);
 })();
