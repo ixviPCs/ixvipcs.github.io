@@ -9,9 +9,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: |
-          curl -s https://raw.githubusercontent.com/ixviPCs/dev.ixvipcs.com/main/dfm.txt > dfm_remote.txt
-
-          if grep -q "dfm=true" dfm_remote.txt; then
+          if grep -q "dfm=true" dfm.txt; then
             cp dfm.html index.html
           else
             cp site.html index.html
