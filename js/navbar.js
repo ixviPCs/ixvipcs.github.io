@@ -71,7 +71,7 @@
         <img src="/favicon.ico" class="nav-logo" alt="Home" />
       </a>
       <a href="/Pre-Built-PCs" class="nav-link">Browse PCs</a>
-      <a href="order.ixvipcs.com" class="nav-link">Order</a>
+      <a href="https://order.ixvipcs.com" class="nav-link">Order</a>
       <a href="/About-Us" class="nav-link">About Us</a>
       <a href="/More" class="nav-link">More</a>
     </div>
