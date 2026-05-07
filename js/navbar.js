@@ -68,7 +68,7 @@
   container.innerHTML = `
     <div class="navbar">
       <a href="/" class="nav-logo-link">
-        <img src="/favicon.ico" class="nav-logo" alt="Home" />
+        <img src="https://static.ixvipcs.com/favicon.ico" class="nav-logo" alt="Home" />
       </a>
       <a href="/Pre-Built-PCs" class="nav-link">Browse PCs</a>
       <a href="https://order.ixvipcs.com" class="nav-link">Order</a>
